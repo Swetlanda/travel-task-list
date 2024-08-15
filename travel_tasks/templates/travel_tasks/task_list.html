@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>My Travel Tasks</h1>
+<ul>
+    {% for task in tasks %}
+    <li>
+        <a href="{% url 'task_detail' task.pk %}">{{ task.destination }}</a> - {{ task.status }}
+        
+        <!-- Edit and Delete Buttons -->
+        <a href="{% url 'task_edit' task.pk %}">Edit</a> |
+        <a href="{% url 'task_delete' task.pk %}">Delete</a>
+        
+        <!-- Cancel Button -->
+        {% if task.status != 'Cancelled' %}
+        | <form method="post" action="{% url 'task_cancel' task.pk %}" style="display:inline;">
+            {% csrf_token %}
+            <button type="submit" class="btn btn-warning" onclick="return confirm('Are you sure you want to cancel this task?');">
+                Cancel Task
+            </button>
+        </form>
+        {% endif %}
+    </li>
+    {% endfor %}
+</ul>
+
+<a href="{% url 'task_new' %}">Add New Task</a>
+{% endblock %}
