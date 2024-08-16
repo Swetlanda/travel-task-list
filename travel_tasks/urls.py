@@ -23,7 +23,7 @@ urlpatterns = [
     path('task/<int:pk>/', views.TaskDetailView.as_view(), name='task_detail'),
 
     # Edit a task
-    path('task/<int:pk>/edit/', views.TaskUpdateView.as_view(), name='task_edit'),  # Corrected to TaskUpdateView
+    path('task/<int:pk>/edit/', views.TaskUpdateView.as_view(), name='task_edit'),
 
     # Delete a task
     path('task/<int:pk>/delete/', views.TaskDeleteView.as_view(), name='task_delete'),
