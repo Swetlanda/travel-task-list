@@ -1,10 +1,40 @@
-<!-- task_delete.html -->
-<h1>Delete Task</h1>
-<p>Are you sure you want to delete the task: "{{ task.destination }}"?</p>
+{% extends "base.html" %}
+{% load static %}
 
-<form method="post">
-    {% csrf_token %}
-    <button type="submit">Yes, Delete</button>
-</form>
+{% block title %}
+{% if form.instance.pk %}Edit Task{% else %}New Task{% endif %}
+{% endblock %}
 
-<a href="{% url 'task_list' %}">Cancel</a>
+{% block content %}
+
+<div class="container mt-4">
+    <div class="row justify-content-center">
+        <div class="col-md-8 col-lg-6">
+            <!-- Start of card -->
+            <div class="card shadow-sm border-0">
+                <div class="card-header bg-light-green text-dark-green">
+                    <h3 class="text-center mb-0">Delete Task</h3>
+                </div>
+                <div class="card-body">
+                    <p>Are you sure you want to delete the task: "{{ task.destination }}"?</p>
+
+                    <!-- Form to confirm deletion -->
+                    <form method="post">
+                        {% csrf_token %}
+                        <button type="submit" class="btn btn-danger w-100">
+                            Yes, Delete
+                        </button>
+                    </form>
+                </div>
+                <div class="card-footer text-center">
+                    <!-- Link to go back to the task list -->
+                    <a href="{% url 'task_list' %}" class="btn btn-warning btn-sm">
+                        Cancel
+                    </a>
+                </div>
+            </div>
+            <!-- End of card -->
+        </div>
+    </div>
+</div>
+{% endblock %}

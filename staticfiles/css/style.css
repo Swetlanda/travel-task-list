@@ -43,12 +43,12 @@ p, h1, h2, h3, h4 {
   }
 .main-heading {
     font-weight: bold;
-    font-size: 64px;
+    font-size: 4rem;
 }
 
 .main-heading-highlight {
     font-weight: bold;
-    font-size: 80px;
+    font-size: 5rem;
     color: #03BFAE;
 }
 
@@ -109,20 +109,6 @@ p, h1, h2, h3, h4 {
 @media (min-width: 320px) {
 
     .main-heading {
-        font-size: 30px;
-    }
-
-    .main-heading-highlight {
-        
-        font-size: 40px;
-        
-    }
-
-}
-
-@media (min-width: 425px) {
-
-    .main-heading {
         font-size: 40px;
     }
 
@@ -159,26 +145,27 @@ p, h1, h2, h3, h4 {
 @media (min-width: 1024px) {
 
     .main-heading {
-        font-size: 40px;
+        font-size: 50px;
     }
     .main-heading-highlight {
         
-        font-size: 50px;
+        font-size: 60px;
         
     }
 
 /* Desktop 1440*/
 @media (min-width: 1440px) {
 
-    .main-heading {
+    #main-heading {
         font-size: 70px;
     }
-    .main-heading-highlight {
+
+}
+.main-heading-highlight {
     
-        font-size: 80px;
-        
-    }
+    font-size: 80px;
+    
 }
 
-
+}
 }
