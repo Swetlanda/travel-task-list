@@ -7,7 +7,6 @@ from .views import (
     TaskDetailView,
     TaskUpdateView,
     TaskDeleteView,
-    TaskCancelView
 )
 
 urlpatterns = [
@@ -28,7 +27,4 @@ urlpatterns = [
 
     # Delete a task
     path('task/<int:pk>/delete/', views.TaskDeleteView.as_view(), name='task_delete'),
-
-    # Cancel a task
-    path('task/<int:pk>/cancel/', views.TaskCancelView.as_view(), name='task_cancel'),
 ]

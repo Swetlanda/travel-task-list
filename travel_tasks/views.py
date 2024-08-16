@@ -98,14 +98,3 @@ class TaskDeleteView(CustomLoginRequiredMixin, SuccessMessageMixin, DeleteView):
         return response
 
 
-class TaskCancelView(CustomLoginRequiredMixin, View):
-    """
-    Allows the user to cancel a task (sets status to 'Cancelled')
-    """
-    def post(self, request, pk, *args, **kwargs):
-        task = get_object_or_404(TravelTask, pk=pk)
-        task.status = 'Cancelled'
-        task.save()
-        messages.success(request, 'Task cancelled successfully!')
-        return redirect('task_list')
-
