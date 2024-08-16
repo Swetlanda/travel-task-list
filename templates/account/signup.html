@@ -1,39 +1,38 @@
 {% extends "base.html" %}
-{% load static %}
 
-{% block title %}Register{% endblock %}
+{% load i18n %}
+
+{% block head_title %}{% trans "Signup" %}{% endblock %}
 
 {% block content %}
 {% load crispy_forms_tags %}
 
-<div class="container mt-4">
-    <!-- Header for the Register form -->
-    <h2 class="text-center">Create an Account</h2>
+<div class="container p-0">
+    <div class="row">
+      <div class="col-12 col-md-4 mt-3">
+        
+        <h3>Create an Account</h3>
+  
+        <p>Join us and start planning your travels! <br> Fill in the details below to create your account.</p>
 
-    <!-- Main Message -->
-    <p class="lead text-center">Join us and start planning your travels! <br> Fill in the details below to create your account.</p>
-
-    <!-- Begin form to handle user registration -->
-    <div class="row justify-content-center">
-        <div class="col-md-6 col-lg-4">
-            <form method="POST" action="{% url 'account_signup' %}">
-                <!-- CSRF token for security purposes -->
-                {% csrf_token %}
-
-                <!-- Render the registration form fields with spacing above and below -->
-                <div class="mb-4 mt-4">
-                    {{ form.as_p }}
-                </div>
-
-                <!-- Submit button -->
-                <button type="submit" class="btn btn-primary w-100">Register</button>
-            </form>
-
-            <!-- Link to sign in page for existing users -->
-            <div class="text-center mt-3">
-                <p>Already have an account? <a href="{% url 'account_login' %}">Sign in here</a></p>
-            </div>
-        </div>
+      </div>
     </div>
-</div>
+    <div class="row">
+      <div class="col-12 col-md-4 mt-3 mb-3">
+        <form class="signup" id="signup_form" method="post" action="{% url 'account_signup' %}"  aria-label="Signup Form">
+          {% csrf_token %}
+          {{ form | crispy }}
+          {% if redirect_field_value %}
+          <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+          {% endif %}
+          <button class="btn  btn-primary btn-style col-12 btn-lg" type="submit">
+            {% trans "Sign Up" %}</button>
+        </form>
+        
+      </div>
+      <p>Already have an account? <a href="{% url 'account_login' %}">Sign in here</a></p>
+      </div>
+    </div>
+  
+
 {% endblock %}
