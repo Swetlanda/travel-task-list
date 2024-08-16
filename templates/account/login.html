@@ -1,32 +1,36 @@
 {% extends "base.html" %}
+{% load static %}
 
-{% load i18n %}
-{% load account socialaccount %}
-
-{% block head_title %}{% trans "Sign In" %}{% endblock %}
+{% block title %}Sign In{% endblock %}
 
 {% block content %}
+<div class="container mt-4">
+    <!-- Header for the Sign In form -->
+    <h2 class="text-center">Sign In</h2>
 
-<div class="container">
-    <div class="row">
-        <div class="col-md-8 mt-3 offset-md-2">
-            <h3>{% trans "Sign In" %}</h3>
+     <!-- Main Message -->
+     <p class="lead text-center">Welcome back! <br> Ready to conquer your travel planning and stay organized? <br> Log in and let's get started!</p>
 
-            <p>{% blocktrans %}Welcome back to the Travel planning. To create a new travel task, please log in. If
-                you have not created an account yet, then <a class="link" href="{{ signup_url }}">sign up</a>
-                first.{% endblocktrans %}</p>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-md-8 mt-3 offset-md-2">
-            <form class="login" method="POST" action="{% url 'account_login' %}">
+    <!-- Begin form to handle user login -->
+    <div class="row justify-content-center">
+        <div class="col-md-6 col-lg-4">
+            <form method="POST" action="{% url 'account_login' %}">
+                <!-- CSRF token for security purposes -->
                 {% csrf_token %}
-                {{ form.as_p }}
-                {% if redirect_field_value %}
-                <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
-                {% endif %}
-                <button class="btn btn-signup right" type="submit">{% trans "Sign In" %}</button>
+
+                <!-- Render the login form fields with spacing above and below -->
+                <div class="mb-4 mt-4">
+                    {{ form.as_p }}
+                </div>
+
+                <!-- Submit button for signing in -->
+                <button type="submit" class="btn btn-primary w-100">Sign In</button>
             </form>
+
+            <!-- Link to registration page for new users -->
+            <div class="text-center mt-3">
+                <p>Don't have an account? <a href="{% url 'account_signup' %}">Register here</a></p>
+            </div>
         </div>
     </div>
 </div>
