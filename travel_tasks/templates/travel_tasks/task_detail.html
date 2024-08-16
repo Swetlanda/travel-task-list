@@ -1,0 +1,11 @@
+<!-- task_detail.html -->
+<h1>Task Details</h1>
+<p><strong>Destination:</strong> {{ task.destination }}</p>
+<p><strong>Description:</strong> {{ task.description }}</p>
+<p><strong>Start Date:</strong> {{ task.start_date }}</p>
+<p><strong>End Date:</strong> {{ task.end_date }}</p>
+<p><strong>Hotel Booking:</strong> {{ task.book_hotel }}</p>
+<p><strong>Status:</strong> {{ task.status }}</p>
+
+<a href="{% url 'task_edit' task.pk %}">Edit</a> |
+<a href="{% url 'task_list' %}">Back to Task List</a>
