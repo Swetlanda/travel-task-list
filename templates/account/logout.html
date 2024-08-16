@@ -1,28 +1,31 @@
 {% extends "base.html" %}
+{% load static %}
 
-{% load i18n %}
-
-{% block head_title %}{% trans "Sign Out" %}{% endblock %}
+{% block title %}Sign Out{% endblock %}
 
 {% block content %}
-<div class="container">
-    <div class="row">
-        <div class="col-md-8 mt-3 offset-md-2">
-            <h3>{% trans "Sign Out" %}</h3>
+<div class="container mt-4">
+    <!-- Header for the Sign Out page -->
+    <h2 class="text-center">Sign Out</h2>
 
-            <p>{% trans 'Are you sure you want to sign out?' %}</p>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-md-8 mt-3 offset-md-2">
+    <!-- Main Message -->
+    <p class="lead text-center">Are you sure you want to sign out?</p>
 
-            <form method="post" action="{% url 'account_logout' %}">
+    <!-- Begin form to handle user logout -->
+    <div class="row justify-content-center">
+        <div class="col-md-6 col-lg-4">
+            <form method="POST" action="{% url 'account_logout' %}">
+                <!-- CSRF token for security purposes -->
                 {% csrf_token %}
-                {% if redirect_field_value %}
-                <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
-                {% endif %}
-                <button class="btn btn-signup right" type="submit">{% trans 'Sign Out' %}</button>
+
+                <!-- Submit button for signing out -->
+                <button type="submit" class="btn btn-danger w-100">Sign Out</button>
             </form>
+
+            <!-- Link to stay logged in -->
+            <div class="text-center mt-3">
+                <p>Changed your mind? <a href="{% url 'home' %}">Stay logged in</a></p>
+            </div>
         </div>
     </div>
 </div>

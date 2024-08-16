@@ -1,9 +1,46 @@
-<!-- task_form.html -->
-<h1>{% if form.instance.pk %}Edit Task{% else %}New Task{% endif %}</h1>
-<form method="post">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit">Save</button>
-</form>
+{% extends "base.html" %}
+{% load static %}
 
-<a href="{% url 'task_list' %}">Back to Task List</a>
+{% block title %}
+    {% if form.instance.pk %}Edit Task{% else %}New Task{% endif %}
+{% endblock %}
+
+{% block content %}
+<div class="container mt-4">
+    <div class="row justify-content-center">
+        <div class="col-md-8 col-lg-6">
+            <!-- Start of card -->
+            <div class="card shadow-sm border-0">
+                <div class="card-header bg-light-green text-dark-green">
+                    <h3 class="text-center mb-0">
+                        {% if form.instance.pk %}Edit Task{% else %}Add New Task{% endif %}
+                    </h3>
+                </div>
+                <div class="card-body">
+                    <!-- Form to add or edit a task -->
+                     <form method="post">
+                            {% csrf_token %}
+
+                            <!-- Render the form fields as paragraphs -->
+                            <div class="mb-4">
+                                {{ form.as_p }}
+                            </div>
+                        
+                        <!-- Save button -->
+                        <button type="submit" class="btn btn-primary w-100">
+                            Save
+                        </button>
+                    </form>
+                </div>
+                <div class="card-footer text-center">
+                    <!-- Link to go back to the task list -->
+                    <a href="{% url 'task_list' %}" class="btn btn-warning btn-sm">
+                        Back to Task List
+                    </a>
+                </div>
+            </div>
+            <!-- End of card -->
+        </div>
+    </div>
+</div>
+{% endblock %}
