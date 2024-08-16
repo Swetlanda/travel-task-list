@@ -1,11 +1,35 @@
-<!-- task_detail.html -->
-<h1>Task Details</h1>
-<p><strong>Destination:</strong> {{ task.destination }}</p>
-<p><strong>Description:</strong> {{ task.description }}</p>
-<p><strong>Start Date:</strong> {{ task.start_date }}</p>
-<p><strong>End Date:</strong> {{ task.end_date }}</p>
-<p><strong>Hotel Booking:</strong> {{ task.book_hotel }}</p>
-<p><strong>Status:</strong> {{ task.status }}</p>
+{% extends "base.html" %}
+{% load static %}
 
-<a href="{% url 'task_edit' task.pk %}">Edit</a> |
-<a href="{% url 'task_list' %}">Back to Task List</a>
+{% block title %}Task Details{% endblock %}
+
+{% block content %}
+<div class="container mt-4">
+    <div class="row justify-content-center">
+        <div class="col-md-8 col-lg-6">
+            <!-- Start of card -->
+            <div class="card shadow-sm border-0">
+                <div class="card-header bg-light-green text-dark-green">
+                    <h3 class="text-center mb-0">Task Details</h3>
+                </div>
+                <div class="card-body">
+                    <!-- Display task details -->
+                    <p><strong>Destination:</strong> {{ task.destination }}</p>
+                    <p><strong>Description:</strong> {{ task.description }}</p>
+                    <p><strong>Start Date:</strong> {{ task.start_date }}</p>
+                    <p><strong>End Date:</strong> {{ task.end_date }}</p>
+                    <p><strong>Hotel Booking:</strong> {{ task.book_hotel }}</p>
+                    <p><strong>Transportation:</strong> {{ task.transportation }}</p>
+                    <p><strong>Status:</strong> {{ task.status }}</p>
+                </div>
+                <div class="card-footer text-center">
+                    <!-- Edit and Back to Task List buttons -->
+                    <a href="{% url 'task_edit' task.pk %}" class="btn btn-primary btn-sm">Edit</a>
+                    <a href="{% url 'task_list' %}" class="btn btn-warning btn-sm">Back to Task List</a>
+                </div>
+            </div>
+            <!-- End of card -->
+        </div>
+    </div>
+</div>
+{% endblock %}
