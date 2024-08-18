@@ -1,16 +1,8 @@
 {% extends "base.html" %}
 {% load static %}
 {% block content %}
-<ul>
-    {% for task in tasks %}
-        <a href="{% url 'task_detail' task.pk %}">{{ task.destination }}</a> - {{ task.status }}
-        
-        <!-- Edit and Delete Buttons -->
-        <a href="{% url 'task_edit' task.pk %}">Edit</a> |
-        <a href="{% url 'task_delete' task.pk %}">Delete</a>
-        
-       
-    {% endfor %}
+
+
     <div class="col-12, col-md-5 col-lg-4 mb-md-5 mb-3">
         <p class="text-center-align">
           <strong aria-live="polite">Hello {{ user }}</strong>
@@ -20,6 +12,50 @@
         <a href="{% url 'task_new' %}" class="btn btn-primary btn-lg btn-style col-12 ">Add New</a>
       </div>
 
+        <!-- Task Entries Column -->
+  <div class="container-fluid mb-5">
+    <div class="row">
+
+      {% for task in tasks %}
+      {% if task.user == request.user %}
+
+
+      <div class="card card-style col-md-5 col-lg-3 col-12 m-1 p-0 shadow">
+        <div class="card-body ">
+          <div class="d-flex mb-2">
+            <div class="col-8">
+              <p class="card-title mb-1">{{task.destination}}</p>
+              <p class="card-text card-heading highlight">Start:</b>{{task.start_date}}</p>
+              <p class="card-text card-heading highlight">End: {{task.end_date}}</p>
+            </div>
+            
+          </div>
+          <div class="col-8">
+
+            <p class="card-text card-heading ">status</p>
+            <p class="card-text mb-2">{{task.status}}</p>
+
+            <p class="card-text card-heading">Transportation</p>
+            <p class="card-text mb-2">{{task.transportation}}</p>
+
+            <p class="card-text card-heading">Hotel</p>
+            <p class="card-text mb-2">{{task.book_hotel}}</p>
+          </div>
+          <p class="card-text">{{task.description | truncatechars:100}}</p>
+
+          <div class="align-self-bottom">
+            
+            
+
+          </div>
+
+        </div>
+      </div>
+
+      {% endif %}
+      {% endfor %}
+    </div>
+  </div>
 
 
 

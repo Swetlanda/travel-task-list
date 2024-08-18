@@ -37,6 +37,9 @@ p, h1, h2, h3, h4 {
 
 }
 
+.highlight{
+    color: #03BFAE;
+}
 
 .nav-link {
     text-decoration: none; /* Remove underline */
@@ -76,6 +79,10 @@ p, h1, h2, h3, h4 {
     
 }
 
+.card-heading{
+    font-weight: bold;
+}
+
 .percentage {
     font-size: 29px;
     font-weight: bold;
@@ -89,7 +96,7 @@ p, h1, h2, h3, h4 {
 }
 
 .card-title{
-    font-size: 14px;
+    font-size: 20px;
     font-weight: 600;
 }
 
