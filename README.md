@@ -44,15 +44,43 @@ In the project, we used the Django AllAuth User Model and a custom-made model, `
 | created_on     | DateTimeField  |                          |
 | updated_on     | DateTimeField  |                          |
 
-## User Stories Overview
+## User Experience / User Stories
+
+As a user, I want to:
+
+- Register for the travel planning app by providing my email, name, and a password, so I can create a personalized account to manage my travel itineraries securely.
+- Log in to my account using username and password, so I can access and manage my saved travel plans securely and resume planning where I left off.
+- Create a new travel plan by entering details such as destination, travel dates, mode of travel, description, and status so that I can organize my trip effectively.
+- Edit an existing travel plan so that I can update important details like the destination, travel dates, status, mode of travel whenever there are changes or new information. This allows me to keep my travel plans accurate and up-to-date, ensuring that everything is well-organized and reflects my current itinerary and preferences.
+- View a comprehensive list of all my travel plans, including key details such as destination, travel dates and time, modes of travel, status of each trip, so I can efficiently manage my upcoming trips, track my itinerary, and prioritize the tasks that need my attention.
+- Delete travel plans that are no longer relevant or have been completed, so I can maintain an organized and up-to-date list of my travel plans. This helps me keep my dashboard clutter-free and focused on my upcoming or active trips.
+- The pages on the website to have consistent styling, so I can have a seamless and cohesive experience as I navigate through the site.
+- the Travel Planning application to be responsive, adjusting its layout and content to fit the screen size of the device I am using, whether it's a desktop, tablet, or smartphone, ensuring an optimal user experience.
+
+As a admin, I want to:
+
+- Set up an initial Django project, so I can start building and organizing the application's structure.
+- Outlines the website's structure and layout, so I can visualize the user flow and ensure an intuitive and user-friendly design using a wireframe.
+- Experience a consistent layout and design across all pages of the website, including the navigation bar's position, styling, and behavior.
 
 ## Design
 
 ### Wireframes
 
+Wireframes were designed using Figma, tailored for both desktop and mobile devices to ensure a seamless user experience across all platforms.
+
+![Wireframe landing page](documentations/travel-tally-wireframe-landing-page.png)
+
+![Wireframe tasks](documentations/travel-tally-wireframe-landing-page-mobile.png)
+
+![Wireframe landing page mobile](documentations/travel-tally-wireframe-task_list.png)
+
+![Wireframe tasks mobile](documentations/travel-tally-wireframe-mobile.png)
+
+
 ## Agile Development
 
-During the development of the TravelTalley website, we implemented an Agile methodology and utilized a Kanban board on GitHub linked to our repository.
+During the development of the TravelTally website, we implemented an Agile methodology and utilized a Kanban board on GitHub linked to our repository.
 
 The Kanban board was organized into the following columns:
 * **To Do**: This column contains user stories that are ready for development.
@@ -115,26 +143,6 @@ We applied labels with MOSCOW prioritization to categorize tasks based on their 
 
 - **Collaborative Travel Planning**
 - Add functionality to allow multiple users to collaborate on the same travel itinerary, sharing tasks and plans.
-
-
-## User Experience /User Stories
-
-As a user, I want to:
-
-- Register for the travel planning app by providing my email, name, and a password, so I can create a personalized account to manage my travel itineraries securely.
-- Log in to my account using username and password, so I can access and manage my saved travel plans securely and resume planning where I left off.
-- Create a new travel plan by entering details such as destination, travel dates, mode of travel, description, and status so that I can organize my trip effectively.
-- Edit an existing travel plan so that I can update important details like the destination, travel dates, status, mode of travel whenever there are changes or new information. This allows me to keep my travel plans accurate and up-to-date, ensuring that everything is well-organized and reflects my current itinerary and preferences.
-- View a comprehensive list of all my travel plans, including key details such as destination, travel dates and time, modes of travel, status of each trip, so I can efficiently manage my upcoming trips, track my itinerary, and prioritize the tasks that need my attention.
-- Delete travel plans that are no longer relevant or have been completed, so I can maintain an organized and up-to-date list of my travel plans. This helps me keep my dashboard clutter-free and focused on my upcoming or active trips.
-- The pages on the website to have consistent styling, so I can have a seamless and cohesive experience as I navigate through the site.
-- the Travel Planning application to be responsive, adjusting its layout and content to fit the screen size of the device I am using, whether it's a desktop, tablet, or smartphone, ensuring an optimal user experience.
-
-As a admin, I want to:
-
-- Set up an initial Django project, so I can start building and organizing the application's structure.
-- Outlines the website's structure and layout, so I can visualize the user flow and ensure an intuitive and user-friendly design using a wireframe.
-- Experience a consistent layout and design across all pages of the website, including the navigation bar's position, styling, and behavior.
 
 ## Technologies Used
 - **HTML5**: Used for structuring the web pages.
@@ -217,7 +225,7 @@ We utilised **Lighthouse** to generate a performance report for the application,
 ![Lighthouse testing](documentations/travel-tally-lighthouse.png)
 
 ## Deployment
-To deploy the TravelTalley application to Heroku, the following steps were taken, following the **Django Deployment Instructions 2024** provided by Code Institute:
+To deploy the TravelTally application to Heroku, the following steps were taken, following the **Django Deployment Instructions 2024** provided by Code Institute:
 
 **1. Repository Setup**
 
