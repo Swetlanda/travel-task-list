@@ -4,6 +4,7 @@
 {% block title %}Sign In{% endblock %}
 
 {% block content %}
+{% load crispy_forms_tags %}
 <div class="container mt-4">
     <!-- Header for the Sign In form -->
     <h2 class="text-center">Sign In</h2>
@@ -20,11 +21,11 @@
 
                 <!-- Render the login form fields with spacing above and below -->
                 <div class="mb-4 mt-4">
-                    {{ form.as_p }}
+                    {{ form | crispy }}
                 </div>
 
                 <!-- Submit button for signing in -->
-                <button type="submit" class="btn btn-primary w-100">Sign In</button>
+                <button type="submit" class="btn btn-primary btn-style w-100">Sign In</button>
             </form>
 
             <!-- Link to registration page for new users -->

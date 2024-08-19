@@ -10,6 +10,7 @@ from django.contrib.messages.views import SuccessMessageMixin
 from django.contrib.auth.mixins import AccessMixin
 
 
+
 class CustomLoginRequiredMixin(LoginRequiredMixin, AccessMixin):
     """ Custom mixin to add a message when user is not logged in. """
 
