@@ -1,184 +1,160 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
-body{
-    font-family: Poppins, sans-serif;
-    padding-bottom: 20px;
-    background-color: #FAFAFA;
+body {
+  font-family: Poppins, sans-serif;
+  padding-bottom: 20px;
+  background-color: #fafafa;
 }
 
-
-
-p, h1, h2, h3, h4 {
-    font-family: Poppins, sans-serif;
+p,
+h1,
+h2,
+h3,
+h4 {
+  font-family: Poppins, sans-serif;
 }
 
 .btn {
-    border-radius: 30px;
+  border-radius: 30px;
 }
 
-
 .btn-style {
-    background-color: #03BFAE;
-    font-family: Poppins, sans-serif;
-    font-weight: 500;
-    border-color: #03BFAE;
+  background-color: #03bfae;
+  font-family: Poppins, sans-serif;
+  font-weight: 500;
+  border-color: #03bfae;
 }
 
 .btn-style-wht {
-    background-color: white;
-    font-family: Poppins, sans-serif;
-    font-weight: 500;
-    border-color: #03BFAE;
+  background-color: white;
+  font-family: Poppins, sans-serif;
+  font-weight: 500;
+  border-color: #03bfae;
 }
 
 .btn-style-large {
-    line-height: 3rem;
-    font-size: 1.5rem;
-
+  line-height: 3rem;
+  font-size: 1.5rem;
 }
 
-
 .nav-link {
-    text-decoration: none; /* Remove underline */
-  }
+  text-decoration: none; /* Remove underline */
+}
 .main-heading {
-    font-weight: bold;
-    font-size: 64px;
+  font-weight: bold;
+  font-size: 64px;
 }
 
 .main-heading-highlight {
-    font-weight: bold;
-    font-size: 80px;
-    color: #03BFAE;
+  font-weight: bold;
+  font-size: 80px;
+  color: #03bfae;
 }
 
 .dashboard-heading {
-    font-size: 3rem;
-    text-align: center;
+  font-size: 3rem;
+  text-align: center;
 }
 .text-center-align {
-    text-align: center;
+  text-align: center;
 }
 
-
 #hero-image {
-    border-radius: 1.5rem;
+  border-radius: 1.5rem;
 }
 
 .btn-href-margin {
-    padding-left: 0;
-    padding-right: 0;
-
+  padding-left: 0;
+  padding-right: 0;
 }
 
 .card-style {
-    border-radius: 10px;
-    
+  border-radius: 10px;
 }
 
 .percentage {
-    font-size: 29px;
-    font-weight: bold;
-    color: #03BFAE;
-
+  font-size: 29px;
+  font-weight: bold;
+  color: #03bfae;
 }
 
-.card-text{
-    font-size: 12px;
-    margin: 0;
+.card-text {
+  font-size: 12px;
+  margin: 0;
 }
 
-.card-title{
-    font-size: 14px;
-    font-weight: 600;
+.card-title {
+  font-size: 14px;
+  font-weight: 600;
 }
 
-.time-text{
-    color: #BEC0C7;
+.time-text {
+  color: #bec0c7;
 }
 
 #landing-pg-view {
-    height: 100vh;
+  height: 100vh;
 }
 
 .top-pg-margin {
-    margin-top: 100px;
+  margin-top: 100px;
 }
 
 /* Small devices (phones) */
 @media (min-width: 320px) {
+  .main-heading {
+    font-size: 30px;
+  }
 
-    .main-heading {
-        font-size: 30px;
-    }
-
-    .main-heading-highlight {
-        
-        font-size: 40px;
-        
-    }
-
+  .main-heading-highlight {
+    font-size: 40px;
+  }
 }
 
 @media (min-width: 425px) {
+  .main-heading {
+    font-size: 40px;
+  }
 
-    .main-heading {
-        font-size: 40px;
-    }
-
-    .main-heading-highlight {
-        
-        font-size: 50px;
-        
-    }
-
+  .main-heading-highlight {
+    font-size: 50px;
+  }
 }
 
 /* Tablets*/
 @media (min-width: 768px) {
+  .main-heading {
+    font-size: 30px;
+  }
 
-    .main-heading {
-        font-size: 30px;
-    }
-
-    .main-heading-highlight {
-        
-        font-size: 40px;
-        
-    }
-    .dashboard-heading {
-        font-size: 5rem;
-        text-align: left;
-    }
-    .text-center-align {
-        text-align: left;
-    }
+  .main-heading-highlight {
+    font-size: 40px;
+  }
+  .dashboard-heading {
+    font-size: 5rem;
+    text-align: left;
+  }
+  .text-center-align {
+    text-align: left;
+  }
 }
 
 /* Desktop 1024*/
 @media (min-width: 1024px) {
+  .main-heading {
+    font-size: 40px;
+  }
+  .main-heading-highlight {
+    font-size: 50px;
+  }
 
+  /* Desktop 1440*/
+  @media (min-width: 1440px) {
     .main-heading {
-        font-size: 40px;
+      font-size: 70px;
     }
     .main-heading-highlight {
-        
-        font-size: 50px;
-        
+      font-size: 80px;
     }
-
-/* Desktop 1440*/
-@media (min-width: 1440px) {
-
-    .main-heading {
-        font-size: 70px;
-    }
-    .main-heading-highlight {
-    
-        font-size: 80px;
-        
-    }
-}
-
-
+  }
 }

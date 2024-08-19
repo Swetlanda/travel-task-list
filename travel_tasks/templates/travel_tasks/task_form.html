@@ -2,7 +2,7 @@
 {% load static %}
 
 {% block title %}
-    {% if form.instance.pk %}Edit Task{% else %}New Task{% endif %}
+{% if form.instance.pk %}Edit Task{% else %}New Task{% endif %}
 {% endblock %}
 
 {% block content %}
@@ -18,14 +18,14 @@
                 </div>
                 <div class="card-body">
                     <!-- Form to add or edit a task -->
-                     <form method="post">
-                            {% csrf_token %}
+                    <form method="post">
+                        {% csrf_token %}
 
-                            <!-- Render the form fields as paragraphs -->
-                            <div class="mb-4">
-                                {{ form.as_p }}
-                            </div>
-                        
+                        <!-- Render the form fields as paragraphs -->
+                        <div class="mb-4">
+                            {{ form.as_p }}
+                        </div>
+
                         <!-- Save button -->
                         <button type="submit" class="btn btn-primary w-100">
                             Save
