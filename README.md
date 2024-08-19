@@ -37,18 +37,23 @@ As a admin, I want to:
 - Outlines the website's structure and layout, so I can visualize the user flow and ensure an intuitive and user-friendly design using a wireframe.
 - Experience a consistent layout and design across all pages of the website, including the navigation bar's position, styling, and behavior.
 
-
 ## Testing and validation
+
+### HTML
+
+- I used the [W3 HTML Validator](https://validator.w3.org/) to check the HTML script validation.
+
+![HTML Validator](documentations/TravelTally_HTML_Validator.png)
 
 ### CSS
 
-- I used the [W3 CSS Validator](https://jigsaw.w3.org/css-validator/) to check my CSS script by Direct Input. I found no errors! There are 4 warnigns which are just flagging vendor extensions.
+- I used the [W3 CSS Validator](https://jigsaw.w3.org/css-validator/) to check my CSS script by Direct Input. I found no errors! There are 2 warnigns which are just flagging vendor extensions.
 
 ![CSS Validator](documentations/TravelTally_CSS_Validator.png)
 
 ### Python
 
-- I used the [CI Python Linter](https://pep8ci.herokuapp.com/) to check all my python scripts. I found few errors like the below - mostly lines were too long or there was a missing blank space line. I have left some of the error messages as they are related to a too long line at the result of a comment.
+- I used the [CI Python Linter](https://pep8ci.herokuapp.com/) to check all my python scripts. I found few errors but mostly lines were too long or there was a missing blank space line. I have left some of the error messages as they are related to a too long lines.
 
 ![Python Validator](documentations/TravelTally_Python_Validator.png)
 
@@ -96,3 +101,5 @@ As a admin, I want to:
 ## Deployment
 
 ## Credits and Acknowledgements
+
+[Back to Top](#To-Do List-Travel Planning)
