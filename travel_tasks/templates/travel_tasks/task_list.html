@@ -3,59 +3,66 @@
 {% block content %}
 
 
-    <div class="col-12, col-md-5 col-lg-4 mb-md-5 mb-3">
-        <p class="text-center-align">
-          <strong aria-live="polite">Hello {{ user }}</strong>
-          </p>
-        <h1 class="dashboard-heading" aria-level="1">My Travel Tasks</h1>
-    
-        <a href="{% url 'task_new' %}" class="btn btn-primary btn-lg btn-style col-12 ">Add New</a>
-      </div>
+<div class="col-12, col-md-5 col-lg-4 mb-md-5 mb-3">
+  <p class="text-center-align">
+    <strong aria-live="polite">Hello {{ user }}</strong>
+  </p>
+  <h1 class="dashboard-heading" aria-level="1">My Travel Tasks</h1>
 
-        <!-- Task Entries Column -->
-  <div class="container-fluid mb-5">
-    <div class="row">
+  <a href="{% url 'task_new' %}" class="btn btn-primary btn-lg btn-style col-12 ">Add New</a>
+</div>
 
-      {% for task in tasks %}
-      {% if task.user == request.user %}
+<!-- Task Entries Column -->
+<div class="container-fluid mb-5">
+  <div class="row d-flex">
+
+    {% for task in tasks %}
+    {% if task.user == request.user %}
 
 
-      <div class="card card-style col-md-5 col-lg-3 col-12 m-1 p-0 shadow">
-        <div class="card-body ">
-          <div class="d-flex mb-2">
-            <div class="col-8">
-              <p class="card-title mb-1">{{task.destination}}</p>
-              <p class="card-text card-heading highlight">Start:</b>{{task.start_date}}</p>
-              <p class="card-text card-heading highlight">End: {{task.end_date}}</p>
-            </div>
-            
-          </div>
+    <div class="card card-style col-md-5 col-lg-3 col-12 m-1 p-0 shadow">
+      <div class="card-body ">
+        <div class="d-flex mb-2">
           <div class="col-8">
-
-            <p class="card-text card-heading ">status</p>
-            <p class="card-text mb-2">{{task.status}}</p>
-
-            <p class="card-text card-heading">Transportation</p>
-            <p class="card-text mb-2">{{task.transportation}}</p>
-
-            <p class="card-text card-heading">Hotel</p>
-            <p class="card-text mb-2">{{task.book_hotel}}</p>
-          </div>
-          <p class="card-text">{{task.description | truncatechars:100}}</p>
-
-          <div class="align-self-bottom">
-            
-            
-
+            <p class="card-title mb-1">{{task.destination}}</p>
+            <p class="card-text card-heading highlight">Start: <span class="date-text">{{task.start_date}}</span></p>
+            <p class="card-text card-heading highlight">End: <span class="date-text">{{task.end_date}}</span></p>
           </div>
 
         </div>
-      </div>
+        <div class="row d-flex">
 
-      {% endif %}
-      {% endfor %}
+          <div class="col-5">
+            <p class="card-text card-heading">Status</p>
+            <p class="card-text mb-2">{{task.status}}</p>
+          </div>
+
+          <div class="col-7">
+            <p class="card-text card-heading">Transportation</p>
+            <p class="card-text mb-2">{{task.transportation}}</p>
+          </div>
+
+          <div class="col-5">
+            <p class="card-text card-heading">Hotel</p>
+            <p class="card-text mb-2">{{task.book_hotel}}</p>
+          </div>
+        </div>
+
+        <p class="card-text">{{task.description | truncatechars:100}}</p>
+
+        <div class="align-self-bottom">
+       
+         <a href="{% url 'task_delete' task.id %}" class="btn btn-outline-primary card-btn-text btn-style-second">Delete</a>
+        <a href="{% url 'task_edit' task.id %}" class="btn btn-primary btn-style card-btn-text"> Edit</a>
+        <a href="{% url 'task_detail' task.id %}" class="btn btn-primary btn-style card-btn-text"> View </a>
+      </div>
+      </div>
     </div>
+
+    {% endif %}
+    {% endfor %}
   </div>
+</div>
 
 
 

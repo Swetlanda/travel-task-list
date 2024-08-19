@@ -31,10 +31,42 @@ p, h1, h2, h3, h4 {
     border-color: #03BFAE;
 }
 
+.btn-style-second {
+    background-color: white;
+    font-family: Poppins, sans-serif;
+    font-weight: 500;
+    border-color: #FF8142;
+    color: #FF8142;
+}
+
 .btn-style-large {
     line-height: 3rem;
     font-size: 1.5rem;
 
+}
+
+.btn-outline-primary:hover,
+.btn-outline-primary:focus {
+  background-color: #FF8142; /* Change background color on hover and focus */
+  border-color: #ffffff;
+}
+
+.btn-outline-primary:active {
+  background-color: #FF8142; /* Change background color on click */
+  box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+}
+
+
+.btn-primary:hover,
+.btn-primary:focus {
+  background-color: #03BFAE; /* Change background color on hover and focus */
+  border-color: #03BFAE;
+  color: #ffffff; 
+}
+
+.btn-outline-primary:active {
+  background-color: #03BFAE; /* Change background color on click */
+  box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
 }
 
 .highlight{
@@ -100,8 +132,12 @@ p, h1, h2, h3, h4 {
     font-weight: 600;
 }
 
-.time-text{
-    color: #BEC0C7;
+.card-btn-text{
+    font-size: 14px;
+}
+
+.date-text{
+    font-weight: normal;
 }
 
 #landing-pg-view {
