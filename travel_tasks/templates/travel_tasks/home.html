@@ -3,7 +3,6 @@
 
 {% block content %}
 
-<!-- index.html content starts here -->
 
 
 <div class="row d-flex justify-content-between">
@@ -21,7 +20,7 @@
                 free</button>
         </form>
         {% else %}
-        <form action="{% url 'tasks' %}" method="get">
+        <form action="{% url 'task_list' %}" method="get">
             <button type="submit" class="btn btn-style-large btn-lg btn-primary btn-style col-12 col-lg-8 mb-3">Manage
                 Your Tasks</button>
         </form>
@@ -47,5 +46,4 @@
 </nav>
 {% endif %}
 
-<!-- index.html content ends here -->
 {% endblock %}

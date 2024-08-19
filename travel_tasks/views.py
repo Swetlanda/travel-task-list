@@ -90,7 +90,7 @@ class TaskDeleteView(CustomLoginRequiredMixin, SuccessMessageMixin, DeleteView):
     """
     model = TravelTask
     template_name = 'travel_tasks/task_delete.html'
-    success_url = reverse_lazy('travel_tasks/task_list')
+    success_url = reverse_lazy('task_list')
     success_message = "Task deleted successfully!"
 
     def delete(self, request, *args, **kwargs):
